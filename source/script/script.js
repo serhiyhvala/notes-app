@@ -55,6 +55,12 @@ function showMenu(elem) {
     });
 }
 
+function deleteNote(noteId){
+    notes.splice(noteId, 1);
+    localStorage.setItem("notes", JSON.stringify(notes));
+    showNotes();
+}
+
 addBtn.addEventListener("click", e =>{
     e.preventDefault();
     let noteTitle = titleTag.value,
